@@ -17,7 +17,7 @@ public class MemberRegisterService {
 			throw new DuplicateMemberException("dup id " + req.getId());
 		}
 		Member newMember = new Member(req.getId(),req.getPw(), req.getName(), req.getTel(), req.getBirth(),
-				req.getAddr_road(),req.getAddr_detail(), req.getEmail(),
+				req.getAddr(), req.getEmail(),
 				LocalDateTime.now());
 		memberDao.insert(newMember);
 		return newMember.getId();

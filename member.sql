@@ -6,8 +6,7 @@ create table member(
 	name varchar(100),
 	tel varchar(100),
 	birth varchar(100),
-	addr_road varchar(100),
-	addr_detail varchar(100),
+	addr varchar(100),
 	email varchar(100),
 	regdate date
 );

@@ -28,8 +28,8 @@ public class LoginController {
     public String form(LoginCommand loginCommand,
     		@CookieValue(value = "REMEMBER", required = false) Cookie rCookie) {
 		if (rCookie != null) {
-			loginCommand.setEmail(rCookie.getValue());
-			loginCommand.setRememberEmail(true);
+			loginCommand.setId(rCookie.getValue());
+			loginCommand.setRememberId(true);
 		}
     	return "login/loginForm";
     }
@@ -43,11 +43,12 @@ public class LoginController {
             return "login/loginForm";
         }
         try {
-
+        	authService.authenticate(loginCommand.getId(), loginCommand.getPw());
+        	
 			Cookie rememberCookie = 
-					new Cookie("REMEMBER", loginCommand.getEmail());
+					new Cookie("REMEMBER", loginCommand.getId());
 			rememberCookie.setPath("/");
-			if (loginCommand.isRememberEmail()) {
+			if (loginCommand.isRememberId()) {
 				rememberCookie.setMaxAge(60 * 60 * 24 * 30);
 			} else {
 				rememberCookie.setMaxAge(0);

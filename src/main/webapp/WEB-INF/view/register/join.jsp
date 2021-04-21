@@ -4,11 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title><spring:message code="member.register" /></title>
+<title><spring:message code="member.register"/></title>
 </head>
 <body>
 	<h2>
-		<spring:message code="member.info" />
+		<spring:message code="member.info"/>
 	</h2>
 	<form:form action="step3" modelAttribute="registerCommand">
 		<p>
@@ -39,7 +39,7 @@
 			<form:errors path="tel" />
 		</p>
 		<p>
-			<label><spring:message code = "birth" /> <br>
+			<label><spring:message code = "birth" /> : <br>
 				<form:select path = "year" name="year" id="year" title="년도" />
 				<form:select path = "month" name="month" id="month" title="월"/>
 				<form:select path = "day" name="day" id="day" title="일" />
@@ -64,7 +64,6 @@
 		</p>
 		<input type="submit" value="<spring:message code="register.btn" />">
 	</form:form>
-
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>

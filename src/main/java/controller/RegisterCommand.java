@@ -11,9 +11,10 @@ public class RegisterCommand {
 	private String year;
 	private String month;
 	private String day;
-	private String birth = "";
+	private String birth;
 	private String addr_road;
 	private String addr_detail;
+	private String addr;
 	private String tel;
 	private String email;
 	private LocalDateTime regdate;
@@ -51,13 +52,31 @@ public class RegisterCommand {
 	}
 
 	public String getBirth() {
-		return birth;
+		if(Integer.parseInt(month) >= 10) {
+			this.month = month;
+		}else {
+			this.month = "0"+month;
+		}
+		if(Integer.parseInt(day) >= 10) {
+			this.day = month;
+		}else {
+			this.day = "0"+day;
+		}
+		return year + "년 " + month + "월 " + day + "일";
 	}
 
-	public void setBirth(String year, String month, String day) {
-		this.birth = year + " " + month + " " + day;
+	public void setBirth(String birth) {
+		this.birth = birth;
 	}
 
+	public String getAddr() {
+		return addr_road + " " + addr_detail;
+	}
+	
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	
 	public String getAddr_road() {
 		return addr_road;
 	}

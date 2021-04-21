@@ -8,22 +8,22 @@
 </head>
 <body>
     <form:form modelAttribute="loginCommand">
-    <form:errors />
     <p>
-        <label><spring:message code="email" />:<br>
-        <form:input path="email" />
-        <form:errors path="email"/>
+        <label><spring:message code="id" />:<br>
+        <form:input path="id" />
+        <form:errors path="id"/>
         </label>
     </p>
     <p>
         <label><spring:message code="password" />:<br>
-        <form:password path="password" />
-        <form:errors path="password"/>
+        <form:password path="pw" />
+        <form:errors path="pw"/>
         </label>
     </p>
+     <form:errors />
     <p>
-        <label><spring:message code="rememberEmail" />:
-        <form:checkbox path="rememberEmail"/> 
+        <label><spring:message code="rememberid" />:
+        <form:checkbox path="rememberId"/> 
         </label>
     </p>
     <input type="submit" value="<spring:message code="login.btn" />">

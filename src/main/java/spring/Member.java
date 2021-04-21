@@ -3,24 +3,23 @@ package spring;
 import java.time.LocalDateTime;
 
 public class Member {
-
+	public Member() {}
+	
 	private String id;
 	private String pw;
 	private String name;
 	private String tel;
 	private String birth;
-
-	public Member() {}
-	public Member(String id, String pw, String name, String tel, String birth, String addr_road, String addr_detail,
-			String email, LocalDateTime regdate) {
-		super();
+	private String addr;
+	
+	public Member(String id, String pw, String name, String tel, String birth, String addr, String email,
+			LocalDateTime regdate) {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.tel = tel;
 		this.birth = birth;
-		this.addr_road = addr_road;
-		this.addr_detail = addr_detail;
+		this.addr = addr;
 		this.email = email;
 		this.regdate = regdate;
 	}
@@ -28,7 +27,7 @@ public class Member {
 	public String getId() {
 		return id;
 	}
-	
+
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -65,20 +64,12 @@ public class Member {
 		this.birth = birth;
 	}
 
-	public String getAddr_road() {
-		return addr_road;
+	public String getAddr() {
+		return addr;
 	}
 
-	public void setAddr_road(String addr_road) {
-		this.addr_road = addr_road;
-	}
-
-	public String getAddr_detail() {
-		return addr_detail;
-	}
-
-	public void setAddr_detail(String addr_detail) {
-		this.addr_detail = addr_detail;
+	public void setAddr(String addr) {
+		this.addr = addr;
 	}
 
 	public String getEmail() {
@@ -97,10 +88,12 @@ public class Member {
 		this.regdate = regdate;
 	}
 
-	private String addr_road;
-	private String addr_detail;
 	private String email;
 	private LocalDateTime regdate;
+	
+
+
+
 
 
 	
